@@ -1,0 +1,71 @@
+@model WebApplication7.Models.User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Order Page</title>
+    <style>
+        body {
+            background-color: #2c3e50; /* Midnight Blue */
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+            color: #ecf0f1; /* Clouds */
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #e74c3c; /* Alizarin Crimson */
+        }
+
+        label {
+            font-size: 1.5em;
+            display: block;
+            margin-bottom: 10px;
+            color: #95a5a6; /* Concrete */
+        }
+
+        input[type="text"], input[type="number"] {
+            font-size: 1.5em;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 300px;
+            background-color: #34495e; /* Wet Asphalt */
+            color: #ecf0f1; /* Clouds */
+            border: none;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            background-color: #3498db; /* Belize Hole */
+            color: #ecf0f1; /* Clouds */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose your ingridiences</h1>
+    <form method="post" action="/PizzaOrder/ProcessOrder">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="products[0].Name"><br>
+        <label for="productPrice">Product Price:</label>
+        <input type="number" id="productPrice" name="products[0].Price"><br>
+        <label for="productQuantity">Product Quantity:</label>
+        <input type="number" id="productQuantity" name="products[0].Quantity"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
